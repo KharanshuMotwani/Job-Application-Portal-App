@@ -129,7 +129,6 @@ export default function Index() {
       </section>
 
       <div className="mt-24" />
-      <Footer />
     </div>
   );
 }
