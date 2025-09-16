@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ArrowRight, Building2, Users, Shield, Star, Sparkles } from "lucide-react";
-import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { SearchBar } from "@/components/site/SearchBar";
 import { JobCard } from "@/components/site/JobCard";
