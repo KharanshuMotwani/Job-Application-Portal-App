@@ -6,18 +6,29 @@ export function Footer() {
       <div className="container py-10 grid gap-8 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-2 font-bold text-lg">
-            <span className="inline-grid h-6 w-6 place-items-center rounded bg-gradient-to-br from-indigo-600 to-violet-600 text-white">HF</span>
+            <span className="inline-grid h-6 w-6 place-items-center rounded bg-gradient-to-br from-indigo-600 to-violet-600 text-white">
+              HF
+            </span>
             HireFlow
           </div>
           <p className="mt-3 text-sm text-muted-foreground max-w-sm">
-            A modern job application portal to discover roles, track applications, and connect with top companies.
+            A modern job application portal to discover roles, track
+            applications, and connect with top companies.
           </p>
         </div>
         <div>
           <div className="font-semibold mb-3">Explore</div>
           <ul className="space-y-2 text-sm">
-            <li><Link className="hover:underline" to="/">Home</Link></li>
-            <li><Link className="hover:underline" to="/jobs">Jobs</Link></li>
+            <li>
+              <Link className="hover:underline" to="/">
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link className="hover:underline" to="/jobs">
+                Jobs
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -40,9 +51,7 @@ export function Footer() {
       <div className="border-t">
         <div className="container flex flex-col md:flex-row items-center justify-between py-6 text-xs text-muted-foreground gap-2">
           <p>© {new Date().getFullYear()} HireFlow. All rights reserved.</p>
-          <p>
-            Built with ❤️ using React & TailwindCSS
-          </p>
+          <p>Built with ❤️ using React & TailwindCSS</p>
         </div>
       </div>
     </footer>

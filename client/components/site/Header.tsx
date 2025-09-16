@@ -20,7 +20,9 @@ export function Header() {
           <div className="grid h-9 w-9 place-items-center rounded-lg bg-gradient-to-br from-indigo-600 to-violet-600 text-white shadow-md">
             <Briefcase className="h-5 w-5" />
           </div>
-          <span className="text-xl font-extrabold tracking-tight">HireFlow</span>
+          <span className="text-xl font-extrabold tracking-tight">
+            HireFlow
+          </span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1">
@@ -33,7 +35,7 @@ export function Header() {
                   "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                   isActive || location.pathname === item.to
                     ? "text-foreground bg-accent"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent",
                 )
               }
             >
@@ -43,7 +45,10 @@ export function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-2">
-          <Button asChild className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow hover:opacity-95">
+          <Button
+            asChild
+            className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow hover:opacity-95"
+          >
             <Link to="/jobs">Post a job</Link>
           </Button>
         </div>
@@ -69,13 +74,16 @@ export function Header() {
                   "px-2 py-2 rounded-md text-sm font-medium",
                   location.pathname === item.to
                     ? "bg-accent text-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-accent"
+                    : "text-muted-foreground hover:text-foreground hover:bg-accent",
                 )}
               >
                 {item.name}
               </Link>
             ))}
-            <Button asChild className="mt-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+            <Button
+              asChild
+              className="mt-2 bg-gradient-to-r from-indigo-600 to-violet-600 text-white"
+            >
               <Link to="/jobs" onClick={() => setOpen(false)}>
                 Post a job
               </Link>

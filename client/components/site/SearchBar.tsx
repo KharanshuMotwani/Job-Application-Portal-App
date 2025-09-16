@@ -19,7 +19,13 @@ export function SearchBar({ className, onSubmit }: Props) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className={cn("grid gap-3 rounded-xl border bg-card p-3 shadow-sm md:grid-cols-5", className)}>
+    <form
+      onSubmit={handleSubmit}
+      className={cn(
+        "grid gap-3 rounded-xl border bg-card p-3 shadow-sm md:grid-cols-5",
+        className,
+      )}
+    >
       <div className="md:col-span-2 flex items-center gap-2 rounded-md border bg-background px-3 py-2">
         <Search className="h-4 w-4 text-muted-foreground" />
         <input
@@ -45,7 +51,10 @@ export function SearchBar({ className, onSubmit }: Props) {
         />
       </div>
       <div className="md:flex md:items-stretch">
-        <Button type="submit" className="h-full w-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:opacity-95">
+        <Button
+          type="submit"
+          className="h-full w-full bg-gradient-to-r from-indigo-600 to-violet-600 text-white hover:opacity-95"
+        >
           Search jobs
         </Button>
       </div>

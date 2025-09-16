@@ -5,17 +5,24 @@ import { jobs as seed } from "@/data/jobs";
 import { Badge } from "@/components/ui/badge";
 
 export default function Jobs() {
-  const [filters, setFilters] = useState<{ q?: string; location?: string; category?: string }>({});
+  const [filters, setFilters] = useState<{
+    q?: string;
+    location?: string;
+    category?: string;
+  }>({});
 
   const jobs = useMemo(() => {
     const q = (filters.q || "").toLowerCase();
     const l = (filters.location || "").toLowerCase();
     const c = (filters.category || "").toLowerCase();
-    return seed.filter((j) =>
-      [j.title, j.company, j.location, j.type, j.tags.join(" ")]
-        .join(" ")
-        .toLowerCase()
-        .includes(q) && (l ? j.location.toLowerCase().includes(l) : true) && (c ? j.tags.join(" ").toLowerCase().includes(c) : true)
+    return seed.filter(
+      (j) =>
+        [j.title, j.company, j.location, j.type, j.tags.join(" ")]
+          .join(" ")
+          .toLowerCase()
+          .includes(q) &&
+        (l ? j.location.toLowerCase().includes(l) : true) &&
+        (c ? j.tags.join(" ").toLowerCase().includes(c) : true),
     );
   }, [filters]);
 
@@ -24,7 +31,9 @@ export default function Jobs() {
   return (
     <div className="container py-10">
       <h1 className="text-3xl font-bold tracking-tight">Explore jobs</h1>
-      <p className="mt-1 text-muted-foreground">Find roles that match your skills and preferences.</p>
+      <p className="mt-1 text-muted-foreground">
+        Find roles that match your skills and preferences.
+      </p>
 
       <div className="mt-6">
         <SearchBar onSubmit={(v) => setFilters(v)} />
@@ -32,7 +41,9 @@ export default function Jobs() {
 
       <div className="mt-6 flex items-center justify-between">
         <p className="text-sm text-muted-foreground">
-          Showing <span className="font-medium text-foreground">{activeCount}</span> openings
+          Showing{" "}
+          <span className="font-medium text-foreground">{activeCount}</span>{" "}
+          openings
         </p>
       </div>
 

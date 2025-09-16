@@ -1,5 +1,12 @@
 import { useState } from "react";
-import { ArrowRight, Building2, Users, Shield, Star, Sparkles } from "lucide-react";
+import {
+  ArrowRight,
+  Building2,
+  Users,
+  Shield,
+  Star,
+  Sparkles,
+} from "lucide-react";
 import { SearchBar } from "@/components/site/SearchBar";
 import { JobCard } from "@/components/site/JobCard";
 import { jobs } from "@/data/jobs";
@@ -9,17 +16,28 @@ import { Link } from "react-router-dom";
 export default function Index() {
   const [filtered, setFiltered] = useState(jobs);
 
-  function handleSearch({ q, location, category }: { q: string; location: string; category: string }) {
+  function handleSearch({
+    q,
+    location,
+    category,
+  }: {
+    q: string;
+    location: string;
+    category: string;
+  }) {
     const qv = q.toLowerCase();
     const lv = location.toLowerCase();
     const cv = category.toLowerCase();
     setFiltered(
-      jobs.filter((j) =>
-        [j.title, j.company, j.location, j.type, j.tags.join(" ")]
-          .join(" ")
-          .toLowerCase()
-          .includes(qv) && (lv ? j.location.toLowerCase().includes(lv) : true) && (cv ? j.tags.join(" ").toLowerCase().includes(cv) : true)
-      )
+      jobs.filter(
+        (j) =>
+          [j.title, j.company, j.location, j.type, j.tags.join(" ")]
+            .join(" ")
+            .toLowerCase()
+            .includes(qv) &&
+          (lv ? j.location.toLowerCase().includes(lv) : true) &&
+          (cv ? j.tags.join(" ").toLowerCase().includes(cv) : true),
+      ),
     );
   }
 
@@ -39,7 +57,8 @@ export default function Index() {
               Find your next role with confidence
             </h1>
             <p className="mt-4 text-muted-foreground md:text-lg">
-              Discover curated opportunities, apply in seconds, and track your applications—all in one beautiful, modern portal.
+              Discover curated opportunities, apply in seconds, and track your
+              applications—all in one beautiful, modern portal.
             </p>
             <div className="mt-8">
               <SearchBar onSubmit={handleSearch} />
@@ -53,7 +72,9 @@ export default function Index() {
                   Browse all jobs <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">Create profile</Button>
+              <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+                Create profile
+              </Button>
             </div>
           </div>
 
@@ -77,21 +98,29 @@ export default function Index() {
             <Building2 className="h-5 w-5" />
           </div>
           <h3 className="text-lg font-semibold">Top companies</h3>
-          <p className="mt-1 text-sm text-muted-foreground">We partner with vetted startups and enterprises to bring you quality roles.</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            We partner with vetted startups and enterprises to bring you quality
+            roles.
+          </p>
         </div>
         <div className="rounded-2xl border bg-card p-6 shadow-sm">
           <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-lg bg-violet-600/10 text-violet-700">
             <Users className="h-5 w-5" />
           </div>
           <h3 className="text-lg font-semibold">Tailored matches</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Smart suggestions based on your skills, interests, and experience.</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Smart suggestions based on your skills, interests, and experience.
+          </p>
         </div>
         <div className="rounded-2xl border bg-card p-6 shadow-sm">
           <div className="mb-3 inline-grid h-10 w-10 place-items-center rounded-lg bg-fuchsia-600/10 text-fuchsia-700">
             <Shield className="h-5 w-5" />
           </div>
           <h3 className="text-lg font-semibold">Privacy-first</h3>
-          <p className="mt-1 text-sm text-muted-foreground">Your data stays secure. Choose what to share and when to reveal details.</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Your data stays secure. Choose what to share and when to reveal
+            details.
+          </p>
         </div>
       </section>
 
@@ -99,20 +128,42 @@ export default function Index() {
         <div>
           <h2 className="text-2xl font-bold md:text-3xl">How it works</h2>
           <ul className="mt-6 space-y-5 text-sm text-muted-foreground">
-            <li className="flex gap-3"><span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600/10 text-indigo-700">1</span> Create your profile and import your resume.</li>
-            <li className="flex gap-3"><span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-violet-600/10 text-violet-700">2</span> Get matched with roles that fit your skills.</li>
-            <li className="flex gap-3"><span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-fuchsia-600/10 text-fuchsia-700">3</span> Apply in one click and track progress.</li>
+            <li className="flex gap-3">
+              <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-indigo-600/10 text-indigo-700">
+                1
+              </span>{" "}
+              Create your profile and import your resume.
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-violet-600/10 text-violet-700">
+                2
+              </span>{" "}
+              Get matched with roles that fit your skills.
+            </li>
+            <li className="flex gap-3">
+              <span className="mt-1 inline-flex h-6 w-6 items-center justify-center rounded-full bg-fuchsia-600/10 text-fuchsia-700">
+                3
+              </span>{" "}
+              Apply in one click and track progress.
+            </li>
           </ul>
           <div className="mt-6">
-            <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">Get started</Button>
+            <Button className="bg-gradient-to-r from-indigo-600 to-violet-600 text-white">
+              Get started
+            </Button>
           </div>
         </div>
         <div className="rounded-2xl border bg-card p-6 shadow-sm">
-          <div className="flex items-center gap-2 text-amber-600"><Star className="h-4 w-4" /> Success stories</div>
+          <div className="flex items-center gap-2 text-amber-600">
+            <Star className="h-4 w-4" /> Success stories
+          </div>
           <blockquote className="mt-3 text-lg font-medium">
-            “I found my dream job in under two weeks. The experience was fast, friendly, and effective.”
+            “I found my dream job in under two weeks. The experience was fast,
+            friendly, and effective.”
           </blockquote>
-          <p className="mt-2 text-sm text-muted-foreground">— Priya, Senior Designer at Nova Labs</p>
+          <p className="mt-2 text-sm text-muted-foreground">
+            — Priya, Senior Designer at Nova Labs
+          </p>
         </div>
       </section>
 
@@ -120,9 +171,14 @@ export default function Index() {
         <div className="container">
           <div className="rounded-2xl bg-gradient-to-r from-indigo-600 to-violet-600 px-6 py-10 text-center text-white md:px-12">
             <h3 className="text-2xl font-bold">Ready to take the next step?</h3>
-            <p className="mt-1 text-white/80">Join thousands of professionals using HireFlow to level up their careers.</p>
+            <p className="mt-1 text-white/80">
+              Join thousands of professionals using HireFlow to level up their
+              careers.
+            </p>
             <div className="mt-5">
-              <Button variant="secondary" className="rounded-full">Join now</Button>
+              <Button variant="secondary" className="rounded-full">
+                Join now
+              </Button>
             </div>
           </div>
         </div>
